@@ -1,12 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void merge(vector<int>& a, vector<int>& b, int m, int n) {
-	for (int i = n - 1; i >= 0; i--) {
-		int j, last = a[m - 1];
-		for (j = m - 2; j >= 0 && a[j] > b[i]; j--) a[j + 1] = a[j];
-        if (last > b[i]) a[j + 1] = b[i], b[i] = last;
-	}
+void merge(vector<int>& A, int m, int n) {
+    int i = m - 1;  
+    int j = n - 1;   
+    int k = m + n - 1;  
+
+    while (i >= 0 && j >= 0) {
+        if (A[i] > A[j]) A[k--] = A[i--];
+        else A[k--] = A[j--];
+    }
+
+    while (j >= 0) A[k--] = A[j--];
 }
 
 int main() {
@@ -22,12 +27,16 @@ int main() {
     sort(b.begin(), b.end());
     array_b.close();
 
-	int n = a.size(), m = b.size();
-	merge(a, b, m, n);
+    vector<int> A;
+    for(int y : a) A.push_back(y);
+	for(int y : b) A.push_back(y);
+
+	int n = A.size();
+    int m = a.size();
+	merge(A, m, n-m);
 
     ofstream outputFile("output.txt");
-	for(int y : a) outputFile << y << " ";
-	for(int y : b) outputFile << y << " ";
+	for(int y : A) outputFile << y << " ";
     outputFile.close();
 	return 0;
 }

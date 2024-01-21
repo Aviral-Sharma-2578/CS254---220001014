@@ -11,7 +11,11 @@ void array_union(vector<int>& a, vector<int>& b, int m, int n, vector<int>& ans)
 			i++;
 		}
 	}
+
+	while(i < m && a[i] == a[i-1]) i++;
 	while(i < m) ans.push_back(a[i++]);
+	
+	while(j < n && b[j] == b[j-1]) j++; 
 	while(j < n) ans.push_back(b[j++]);
 }
 

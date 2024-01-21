@@ -9,6 +9,8 @@ void intersection(vector<int>& a, vector<int>& b, int m, int n, vector<int>& ans
 		else {
 			ans.push_back(b[j]);
 			i++, j++;
+			while(i < m && a[i] == a[i-1]) i++;
+			while(j < n && b[j] == b[j-1]) j++;
 		}
 	}
 }
