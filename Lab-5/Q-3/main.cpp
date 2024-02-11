@@ -52,3 +52,6 @@ int main() {
 	canBeDividedInTwoCliques(graph) ? cout << "Yes" : cout << "No";
 	return 0;
 }
+
+// time-complexity: O(V^3)
+// space complexity: O(V^2)
