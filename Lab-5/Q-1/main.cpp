@@ -59,3 +59,6 @@ int main() {
 
     return 0;
 }
+
+// time complexity: O(rows * cols)
+// space complexity: O(rows * cols)
