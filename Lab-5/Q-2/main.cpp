@@ -51,3 +51,6 @@ int main() {
 	cout << "Minimum number of dice throws required is " << getMinDiceThrows(moves, boardSize);
 	return 0;
 }
+
+// time complexity: O(N)
+// space complexity: O(N)
