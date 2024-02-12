@@ -53,5 +53,5 @@ int main() {
 	return 0;
 }
 
-// time complexity: O(V^3)
+// time complexity: O(V^2)
 // space complexity: O(V^2)
